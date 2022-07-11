@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 // import App from './App';
 // import Login from './components/pages/login';
@@ -15,6 +16,7 @@ root.render(
     {/* <Register /> */}
     {/* <Login/> */}
     <Authentication/>
+   
   </React.StrictMode>
   // <h1>Hello, world!</h1>
 );
