@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 // import "../../styles/style.css"
 
+import { Link } from "react-router-dom";
+// import "animate.css"
+
 
 class Register extends Component {
   
@@ -12,14 +15,14 @@ class Register extends Component {
     htmlInput.oninvalid = function(e) {
         e.target.setCustomValidity("");
       
-      if ( document.getElementById("email").innerText.length === 0){
-          document.getElementById('err').style.display='block';
+      if ( document.getElementById("email1").innerText.length === 0){
+          document.getElementById('err5').style.display='block';
           
         }
         
     };
     htmlpass.oninvalid = function(e){
-        document.getElementById('err1').style.display='block';
+        document.getElementById('err4').style.display='block';
     }
     htmluser.oninvalid = function(e){
       document.getElementById('err2').style.display='block';
@@ -110,9 +113,9 @@ class Register extends Component {
             <React.Fragment>
                  <div className='container'>
                   <div className='formc' id='register'>
-                 <h2>Welcome</h2>
-                    <p>Create A New Account</p>
-                    <form name="registerform" action=""  >
+                 <h2 className='txt delay-1'>Welcome</h2>
+                    <p className='txt delay-2'>Create A New Account</p>
+                    <form className='txt delay-3' name="registerform" action=""  >
                     {/* <div className='user-box'>
                     <input id="mail" type="email" className='input' required/>
                     <label>Email</label>
@@ -138,12 +141,14 @@ class Register extends Component {
                    <label>Confirm Password</label>
                     </div>
                     
-                    <p id="gotologin">You have an account ?</p>
+                    {/* <p id="gotologin">You have an account ?</p> */}
+                    <Link to="/" id="gotologin">You have an account ?</Link> 
+
                     <button type="submit" name="" id="button2" className='input' onClick={required}>Sign Up</button>
                     </form>
-                    <p>-- Or Continue With --</p>
+                    <p style={{marginBlockStart:'18px'}}>-- Or Continue With --</p>
                     <input type="button" id='google2'  className='social'  />
-                    <input type="button" id='facebook2'  className='social' />
+                    <input  type="button" id='facebook2'  className='social ' />
                     </div> </div>
             </React.Fragment>
         )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 
 class Login extends Component {
@@ -14,6 +15,9 @@ class Login extends Component {
           if ( document.getElementById("email").innerText.length === 0){
               document.getElementById('err').style.display='block';
               
+            }else{
+                document.getElementById('err').style.display='none';
+
             }
             
         };
@@ -38,7 +42,7 @@ class Login extends Component {
             return true; 
             }
         }
-        const required = () => {
+        var required = () => {
             // var empt = document.forms["loginform"]["username"].value;
             // var pss = document.forms["loginform"]["password"].value;
            
@@ -56,6 +60,9 @@ class Login extends Component {
             fuck();
             return true; 
             }
+           
+              
+              
 
          
           }
@@ -64,9 +71,9 @@ class Login extends Component {
             <React.Fragment>
                    <div className='container'>
                   <div className='formc' id='login'>
-                   <h2>Hello Again</h2>
-                    <p>Welcome Back</p>
-                    <form name="loginform" action="" >
+                   <h2 className='txt'>Hello Again</h2>
+                    <p className='txt delay-2'>Welcome Back</p>
+                    <form  className='txt delay-3' name="loginform" action="" >
                         <div className='user-box'>
                              <input name="username" type="text" className='input' id="email"  required/>
                              <b id="err" style={{display:'none',color:'red',marginBlockStart:'-25px',marginInlineStart:'60px',fontSize:'10px',float:'left'}}>please fill the blanket</b>
@@ -78,18 +85,23 @@ class Login extends Component {
                              <label>Password</label>
                         </div>
 
-                    <p>Forget Password ?</p>
-                    <button type="submit" name="" id="button"  onClick={required}>Sign In</button>
-                    <p>-- Or Continue With --</p>
+                   <p>
+                     <Link to="/forget" id="toforget">Forget Password ?</Link>
+                    </p>
+                    <button  name="" id="button" onClick={required} >Sign In</button>
+                    <p style={{marginBlockStart:'18px'}}>-- Or Continue With --</p>
                     <input type="button" id='google' className='social' />
                     <input type="button" id='facebook' className='social'  />
                     </form>
-                    <p id="gotoregister">You don't have an account ?</p>
+                    {/* <p id="gotoregister">You don't have an account ?</p> */}
+                    <Link to="/register" id="gotoregister">You don't have an account ?</Link>
+
                  </div>
                  </div>
                  
             </React.Fragment>
         )
+        
     }
 }
  
